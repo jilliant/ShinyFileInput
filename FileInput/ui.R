@@ -20,9 +20,6 @@ shinyUI(pageWithSidebar(
                    'Double Quote'='"',
                    'Single Quote'="'"),
                  'Double Quote')
-    # tags$head(tags$style(type="text/css",
-    #                      "label.radio { display: inline-block; margin:0 10 0 0;  }",
-    #                      ".radio input[type=\"radio\"] { float: none; }"))
     ),
   
   mainPanel(
