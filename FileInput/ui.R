@@ -34,10 +34,7 @@ shinyUI(pageWithSidebar(
                plotOutput("csvfiltered"),
                value = 2),
       tabPanel("Highlighted Data",
-               h4(textOutput("caption3")),
-               plotOutput("genderDensity", height="250px"),
-               verbatimTextOutput("sexDiff"),
-               htmlOutput("notes3"),
+               plotOutput("highlight"),
                value = 3),
       id="tabs1")
   )
