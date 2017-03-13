@@ -1,12 +1,13 @@
 library(shiny)
 library(dplyr)
 
-
 shinyServer(function(input, output) {
   
   # first tab plot - just a basic ggplot of the base data set  
   output$baseplot <- renderPlot({
+    
     print(ggplot(base, aes(Price,Quantity)) + geom_point())
+  
   })
 
   # Second tab contents of csv  
@@ -40,6 +41,5 @@ shinyServer(function(input, output) {
     print(ggplot(base, aes(Price,Quantity)) + geom_point() + geom_point(data = df.filtered, col = 'red'))
     
   })
-  
   
 })
