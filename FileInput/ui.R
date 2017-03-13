@@ -31,7 +31,7 @@ shinyUI(pageWithSidebar(
                plotOutput("baseplot"),
                value = 1),
       tabPanel("Uploaded Data",
-               tableOutput("csvfiltered"),
+               plotOutput("csvfiltered"),
                value = 2),
       tabPanel("Highlighted Data",
                h4(textOutput("caption3")),

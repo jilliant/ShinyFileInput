@@ -9,18 +9,8 @@ shinyServer(function(input, output) {
     print(ggplot(base, aes(Price,Quantity)) + geom_point())
   })
 
-  # Second tab contents of csv   
-  # output$contents <- renderTable({
-  # 
-  #   inFile <- input$file1
-  #   
-  #   if (is.null(inFile))
-  #     return(NULL)
-  #   
-  #  fcsv <-  read.csv(inFile$datapath, header = input$header)
-  # })
-  
-  output$csvfiltered <- renderTable({
+  # Second tab contents of csv  
+  output$csvfiltered <- renderPlot({
     
     inFile <- input$file1
     
@@ -30,7 +20,9 @@ shinyServer(function(input, output) {
     fcsv <- read.csv(inFile$datapath, header = input$header)
     df.filtered <- base %>%
       filter(OrderId %in% fcsv$OrderId)
-    df.filtered
+    
+    print(ggplot(df.filtered, aes(Price,Quantity)) + geom_point())
+    
   })
   
   # second tab plot - basic ggplot of the uploaded data set
